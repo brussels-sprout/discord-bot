@@ -9,6 +9,19 @@ import commands
 def run_bot():
     from config import TOKEN, bot
 
+    def modify_allowed_mentions():
+        import discord
+
+        nonlocal bot
+
+        bot.allowed_mentions = discord.AllowedMentions(
+            everyone=None,
+            users=None,
+            roles=None
+        )
+
+    modify_allowed_mentions()
+
     bot.run(TOKEN)
 
 
